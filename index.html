@@ -1,80 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="esp">
 <head>
-    <meta charset="UTF-8">
-    <meta name = "Ejemplo" content= "Documento de Ejemplo" >
-    <meta name = "Keywords" content= "HTML5, CSS3, Javascript" >
-    <title>Primera pagina web</title>
-    <link rel="stylesheet" href="css/miestilo.css">
+    <meta charset="iso-8859-1">
+    <meta name="Ejemplo" content="Docuemtno de prueba">
+   <meta name="keywords" content="HTML 5, CSS3, javascript">
+   <little> Primera pagina web</little>
+   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
-        <h1>ESTE ES EL HEADER DE LA PAGINA</h1>
-    </header>
 
-    <nav>
+<body>
+    <div id="divGeneral">
+    <header id="cabecera">
+
+        <h1 id="tituloPrincipal">Este es el heder de la pagina </h1>
+        <h2>subtitulos</h2>
+    </header>
+    
+    <nav id="menu">
         <ul>
-            <li>Principal</li>
-            <li>Fotos</li>
-            <li>Videos</li>
-            <li>Documentos</li>
-            <li>Contacto</li>
+            <li class="opciones">Principal</li>
+            <li class="opciones">Fotos</li>
+            <li class="opciones">Contactos</li>
+
         </ul>
     </nav>
 
-    <section>
-        <article>
+    <section id="seccion principal">
+        <article class="articulo">
             <header>
                 <hgroup>
-                    <h1>Titulo de articulo 1</h1>
-                    <h2>Titulo de articulo 2</h2>
+                    <h1 class="tituloHeaderArticulo">Este es el titulo del articulo 1</h1>
+                    <h2>subtitulos</h2>
                 </hgroup>
+                <time datetime="2020-08-13" pubdate> publicado el 2020-08-13
+
+                </time>
             </header>
+            Este es el contenido del articulo 1
+        </article>
+
+        <article class="articulo">
             <header>
-                Titulo de articulo 1
+                <hgroup>
+                    <h1 class="tituloHeaderArticulo">Este es el titulo del articulo 2</h1>
+                    <h2>subtitulos</h2>
+                </hgroup>
+                <time datetime="2020-08-13" pubdate> publicado el 2020-08-13
+
+                </time>
             </header>
-            Contenido articulo 1
+            Este es el contenido del articulo 2
+            <figure>
+                <img src="https://cdn-icons-png.flaticon.com/512/44/44334.png">
+                <figcaption>esta es una imagen prueba</figcaption>
+
+            </figure>
+
             <footer>
-                <p>Comentario (0)</p>
+                <p>Sin comentarios</p>
             </footer>
         </article>
-        <article>
-            Contenido articulo 2
+
+        <article class="articulo">
             <header>
-                Este es el contenido del articulo 2
-                <figure>
-                    <img src="https://www.purina-latam.com/ec/purina/nota/perros/por-que-los-perros-mueven-la-cola">
-                    <figcaption>
-                        Esta es la imagen que se carga
-                    </figcaption>
-                </figure>
+                <hgroup>
+                    <h1 class="tituloHeaderArticulo">Este es el titulo del articulo 3</h1>
+                    <h2>subtitulos</h2>
+                </hgroup>
+                <time datetime="2020-08-13" pubdate> publicado el 2020-08-13
+
+                </time>
             </header>
+            Este es el contenido del articulo 3
+            <span> Esta es la etiqueta <mark> mark y <em> es importante</em></mark></span>
         </article>
-        <article>
-       <h1>Contenido articulo 3</h1>
-          <header>
-                Contenido del articulo 3
-                <span>Este es <mark etiqueta mark</mark </span>
-         </header>
-        </article>
-        <article>
-            Contenido articulo 4
-        </article>
-    </section>
 
-
-
-    <aside>
-        <blockquote>Mensaje num 1</blockquote>
-        <blockquote>Mensaje num 2</blockquote>
-        <blockquote>Mensaje num 3</blockquote>
-        <blockquote>Mensaje num 4</blockquote>
+       
+        
+    </section>   
+    <aside id="sidebar">
+        <blockquote> Mensaje numero uno</blockquote>
+        <blockquote> Mensaje numero dos</blockquote>
+        <blockquote> Mensaje numero dos</blockquote>
+        <blockquote> Mensaje numero dos</blockquote>
+        
+        
     </aside>
 
-        <footer>
-        <small>Todos los cursos de programacion de web de uvg 2022</small>
-        </footer>
-
-
+    
+    <footer id="footer">
+    <small> es una prueba de texto  para el curso de progra web 2022</small>
+    </footer>
+ </div>
 </body>
+
 </html>
