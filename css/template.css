@@ -1,0 +1,87 @@
+/* SELECTOR UNIVERSAL */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* JERARQUIA DE CABECERAS*/
+
+h1{
+    font: bold 30px verdana, sans-serif;
+}
+
+h2{
+    font: bold 20px verdana, sans-serif;
+}
+
+h3{
+    font: bold 18px verdana, sans-serif;
+}
+
+h4{
+    font: bold 14px verdana, sans-serif;
+}
+
+h5{
+    font: bold 12px verdana, sans-serif;
+}
+
+h6{
+    font: bold 100px verdana, sans-serif;
+}
+
+
+/* DISEÑO DEL TEMPLATE */
+
+#divGeneral{
+    width: 980px;
+    margin: 15px auto;
+    text-align: left;
+}
+
+#cabecera{
+    background: green;
+    padding: 20px;
+    color: white;
+}
+
+#menu{
+    margin-bottom: 15px;
+    background: rgb(228, 137, 104);
+    padding: 5px 15px;
+    border-radius: 10px;
+    padding: 30px;
+
+}
+
+#menu li{
+    display: inline-block;
+    list-style: none;
+    padding: 5px;
+    font: bold 14px sans-serif;
+}
+
+
+#seccionPrincipal{
+    float: left;
+    width: 650px;
+    margin: 20px;
+}
+
+#sidebar{
+    float: right;
+    width: 220px;
+    margin: 20px 0px;
+    padding: 20px;
+    background: rgb(140, 140, 233);
+}
+
+
+
+#footer{
+    clear: both;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid silver;
+}
