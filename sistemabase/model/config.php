@@ -8,7 +8,7 @@ define("PASSDB", "Caldejos551478*");
 define("DATABASE", "sistema");
 
 #OTROS PARÁMETROS DE CONFIGURACIÓN
-define("RAIZ_APLICACION", dirname(_FILE_));
+define("RAIZ_APLICACION", dirname(__FILE__));
 define("DEBUG", "true");
 
 ?>
