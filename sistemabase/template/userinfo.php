@@ -8,7 +8,7 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <p> <?php echo $_SESSION['nombres'] ?> </p>
+        
         </ul>
 
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -21,12 +21,12 @@
                 <img src="assets/img/fotos/user.png" width="50" height="50" class="rounded-circle">
             </a>
             <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                <li><a class="dropdown-item" href="miperfil.php">Mi Perfil</a></li>
-                <li><a  class="dropdown-item" href="#">Configuración</a></li>
+            <li><a class="dropdown-item " href="#" onclick="cargarContenido('view/Usuarios/perfil.php');">Configuración</a></li>
+            <li><a  class="dropdown-item" href="#"  onclick="cargarContenido('view/Usuarios/perfill.php');" >Mi perfil</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item"  href="index.php">Cerrar Sessión</a></li>
+                <li><a class="dropdown-item " href="index.php" >Cerrar Sessión</a></li>
 
             </ul>
         </div>

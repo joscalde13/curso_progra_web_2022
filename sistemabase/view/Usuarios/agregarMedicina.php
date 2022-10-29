@@ -18,7 +18,7 @@ $result = $usrClass->getUsuarios();
     <div class="card-header">
         <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">LISTADO DE USUARIOS</h1>
+            <h1 class="h2">Agregar Medicina</h1>
         </div>
     </div>
 
@@ -28,17 +28,17 @@ $result = $usrClass->getUsuarios();
         <div class="container">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button class="btn btn-success me-md-2" id="btnNuevoUsuario" name="btnNuevoUsuario" type="button"
-                    data-bs-toggle="modal" data-bs-target="#formNuevoUsuario">Nuevo Usuario</button>
+                    data-bs-toggle="modal" data-bs-target="#formNuevoUsuario">Nueva Medicina</button>
             </div>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">NOMBRE</th>
-                            <th scope="col">USERNAME</th>
-                            <th scope="col">CLAVE</th>
-                            <th scope="col">ESTADO</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Precio Total</th>
+                            <th scope="col">Fecha de expiracion</th>
+                            <th scope="col">Nombre de categoria</th>
                      
                         </tr>
                     </thead>
@@ -53,8 +53,6 @@ $result = $usrClass->getUsuarios();
                             <td><?php echo $fila['usuario']; ?></td>
                             <td><?php echo $fila['password']; ?></td>
                             <td><?php echo $fila['estado']; ?></td>
-           
-
                             <td>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                     <button class="btn btn-warning me-md-2" id="btnEditarUsuario"
@@ -79,41 +77,41 @@ $result = $usrClass->getUsuarios();
             </div>
         </div>
     </div>
-    <!-- AQUI INICIA ESTA EL FORMULARIO MODAL PARA AGREGAR USUARIOS -->
+    <!-- AQUI INICIA ESTA EL FORMULARIO MODAL PARA AGREGAR MEDICINA -->
     <div class="modal fade" id="formNuevoUsuario" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content"> 
 
                 <div class="modal-header">
-                    <h5 class="modal-title" id="formNuevoUsuario">Nuevo Usuario</h5>
+                    <h5 class="modal-title" id="formNuevoUsuario">Nueva Medicina</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <div class="modal-body">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="nombres" placeholder="aqui va tu nombre">
-                        <label for="nombres">Nombres</label>
+                        <label for="nombres">Nombre</label>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="apellidos" placeholder="aqui va tu apellido">
-                        <label for="apellidos">Apellidos</label>
+                        <label for="apellidos">Precio total</label>
                     </div>
 
 
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="usuario" placeholder="username">
-                        <label for="usuario">Username</label>
+                        <label for="usuario">Fecha de expiracion</label>
                     </div>
 
                     <div class="form-floating mb-3">
                         <input type="password" class="form-control" id="password" placeholder="aqui va tu clave">
-                        <label for="password">Clave</label>
+                        <label for="password">Categoria</label>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnAgregarUsuario">Agregar Usuario</button>
+                    <button type="button" class="btn btn-primary" id="btnAgregarUsuario">Agregar Medicina</button>
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                 </div>
 
@@ -159,9 +157,6 @@ $result = $usrClass->getUsuarios();
                         <input type="text" class="form-control" id="password_upd" placeholder="aqui va tu clave">
                         <label for="password_upd">Clave</label>
                     </div>
-
-                 
-                    
 
                 </div>
                 <div class="modal-footer">
