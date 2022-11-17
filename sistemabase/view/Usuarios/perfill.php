@@ -30,7 +30,7 @@ $result = $usrClass->getUsuarios();
                     <div class="mt-3">
                     <?php echo $_SESSION['user_nombre']." ".$_SESSION['user_apellido'];
                     ?>
-                      <p class="text-secondary mb-1">Nessus corporation</p>
+                      <p class="text-secondary mb-1">Nessus corporation</p> 
           
       
                     </div>
@@ -51,26 +51,25 @@ $result = $usrClass->getUsuarios();
                       <h6 class="mb-0">Nombre</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <?php echo $_SESSION['user_nombre']." ".$_SESSION['user_apellido'];
-                    ?></b></h4>
+                    <p> <?php echo $_SESSION['user_nombre'] ?> </p></b></h4>
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Correo electrónico</h6>
+                      <h6 class="mb-0">Apellido</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      joscalde13@gmail.con
+                    <p> <?php echo $_SESSION['user_apellido'] ?> </p>
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Numero de telefono</h6>
+                      <h6 class="mb-0">Usuario</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      (502) 5563-2423   
+                       <p> <?php echo $_SESSION['username'] ?> </p>  
                     </div>
                   </div>
             

@@ -13,157 +13,73 @@ $resultRoles = array();
 $result = $usrClass->getUsuarios();
 
 ?>
-<script src="assets/js/moduloUsuarios.js"></script>
-<div class="card">
-    <div class="card-header">
-        <div
-            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Agregar Medicina</h1>
-        </div>
-    </div>
-
-    <div class="card-body">
 
 
-        <div class="container">
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-success me-md-2" id="btnNuevoUsuario" name="btnNuevoUsuario" type="button"
-                    data-bs-toggle="modal" data-bs-target="#formNuevoUsuario">Nueva Medicina</button>
-            </div>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Cantidad</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Precio Total</th>
-                            <th scope="col">Fecha de expiracion</th>
-                            <th scope="col">Nombre de categoria</th>
-                     
-                        </tr>
-                    </thead>
-                    <tbody>
+    <div class="container-fluid">
 
-                        <?php 
-                while ($fila = mysqli_fetch_array($result)){
-                    ?>
-                        <tr>
-                            <th><?php echo $fila['id']; ?></th>
-                            <td><?php echo $fila['nombres']." ".$fila['apellidos']; ?></td>
-                            <td><?php echo $fila['usuario']; ?></td>
-                            <td><?php echo $fila['password']; ?></td>
-                            <td><?php echo $fila['estado']; ?></td>
-                            <td>
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button class="btn btn-warning me-md-2" id="btnEditarUsuario"
-                                        name="btnEditarUsuario" type="button" onclick="obtenerUsuario(<?php echo $fila['id']; ?>);">Editar</button>
+
+
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card">
+                    <div class="card-title">
+
+                    </div>
+                    <div id="add-brand-messages"></div>
+                    <div class="card-body">
+                        <div class="input-states">
+                            <form class="row" method="POST" id="submitProductForm" action="php_action/createProduct.php" method="POST" enctype="multipart/form-data">
+
+                                <input type="hidden" name="currnt_date" class="form-control">
+
+                                <div class="form-group col-md-6">
+                                    <label class="ontrol-label">Codigo</label>
+                                    <input type="text" class="form-control" id="productName" placeholder="Nombre Medicina" name="productName" autocomplete="off" required="" />
                                 </div>
-                            </td>
-                            <td>
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button class="btn btn-danger me-md-2" id="btnEliminarUsuario"
-                                        onclick="eliminarUsuario(<?php echo $fila['id']; ?>);" name="btnEliminarUsuario"
-                                        type="button">Eliminar</button>
+                                
+
+                                <div class="form-group col-md-6">
+                                    <label class="ontrol-label">Nombre Medicina</label>
+                                    <input type="text" class="form-control" id="productName" placeholder="Nombre Medicina" name="productName" autocomplete="off" required="" />
                                 </div>
-                            </td>
-                        </tr>
+                                
+                                <div class="form-group col-md-6">
+                                    <label class="control-label">Cantidad</label>
+                                    <input type="text" class="form-control" id="quantity" placeholder="Cantidad" name="quantity" autocomplete="off" required="" pattern="^[0-9]+$" />
+                                </div>
+                               
+                                
+                                
+                                <div class="form-group col-md-6">
+                                    <label class="control-label">Precio</label>
+                                    <input type="text" class="form-control" id="mrp" placeholder="Precio" name="mrp" autocomplete="off" required="" pattern="^[0-9]+$" />
+                                </div>
+                                
+                                <div class="form-group col-md-6">
+                                    <label class="control-label">Fecha Expiración</label>
+                                    <input type="date" class="form-control" id="expdate" placeholder="Expiry Date" name="expdate" autocomplete="off" required="" pattern="^[0-9]+$" />
+                                </div>
+                              
+                                
+                                <div class="form-group col-md-6">
+                                    <label class="ontrol-label">Nombre de proveedor</label>
+                                    <input type="text" class="form-control" id="productName" placeholder="Nombre de proveedor" name="productName" autocomplete="off" required="" />
+                                </div>
+                               
+                                
+                               <hr>
+                               
 
-                    <?php 
-                    }
-                    ?>
-
-                    </tbody>
-                </table>
+                                <div class="col-md-1 mx-auto">
+                                    <button type="submit" name="create" id="createProductBtn" class="btn btn-primary btn-flat m-b-30 m-t-30">Guardar
+                                    </button>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            
         </div>
-    </div>
-    <!-- AQUI INICIA ESTA EL FORMULARIO MODAL PARA AGREGAR MEDICINA -->
-    <div class="modal fade" id="formNuevoUsuario" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content"> 
-
-                <div class="modal-header">
-                    <h5 class="modal-title" id="formNuevoUsuario">Nueva Medicina</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <div class="modal-body">
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="nombres" placeholder="aqui va tu nombre">
-                        <label for="nombres">Nombre</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="apellidos" placeholder="aqui va tu apellido">
-                        <label for="apellidos">Precio total</label>
-                    </div>
-
-
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="usuario" placeholder="username">
-                        <label for="usuario">Fecha de expiracion</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="password" placeholder="aqui va tu clave">
-                        <label for="password">Categoria</label>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnAgregarUsuario">Agregar Medicina</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- AQUI INICIA ESTA EL FORMULARIO MODAL PARA AGREGAR USUARIOS -->
-    <div class="modal fade" id="formActualizaUsuario" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title" id="formActualizaUsuario">Usuario</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="id_upd">
-                        <label for="id_upd">ID</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="nombres_upd" placeholder="aqui va tu nombre">
-                        <label for="nombres_upd">Nombres</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="apellidos_upd" placeholder="aqui va tu apellido">
-                        <label for="apellidos_upd">Apellidos</label>
-                    </div>
-
-
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="usuario_upd" placeholder="username">
-                        <label for="usuario_upd">Username</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="password_upd" placeholder="aqui va tu clave">
-                        <label for="password_upd">Clave</label>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnActualizarUsuario">Actualizar Usuario</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                </div>
-
-            </div>
-        </div>
-    </div>

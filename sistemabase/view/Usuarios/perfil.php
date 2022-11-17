@@ -14,33 +14,57 @@ $result = $usrClass->getUsuarios();
 
 ?>
 
-
-<div class="container rounded bg-white mt-5 mb-5">
-    <div class="row">
-        <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"><?php echo $_SESSION['user_nombre']." ".$_SESSION['user_apellido'];
-                    ?></span><span class="text-black-50"></span><span> </span></div>
-        </div>
-        <div class="col-md-5 border-right">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">CAMBIO DE CONTRASEÑA </h4>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Nombre </label><input type="text" class="form-control" placeholder="" value=""></div>
-                    <div class="col-md-6"><label class="labels">Apellido</label><input type="text" class="form-control" value="" placeholder=""></div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Usuario</label><input type="text" class="form-control" placeholder="" value=""></div>
-                    <div class="col-md-12"><label class="labels">Contraseña</label><input type="text" class="form-control" placeholder="" value=""></div>
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Guardar datos</button></div> 
-                </div>
-        
-        </div>
-    
-            </div>
+<script src="assets/js/moduloUsuarios.js"></script>
+<div class="card">
+    <div class="card-header">
+        <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">LISTADO DE USUARIOS</h1>
         </div>
     </div>
-</div>
-</div>
-</div>
+
+    <div class="card-body">
+
+
+        <div class="container">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-success me-md-2" id="btnNuevoUsuario" name="btnNuevoUsuario" type="button"
+                    data-bs-toggle="modal" data-bs-target="#formNuevoUsuario">Nuevo Usuario</button>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">USERNAME</th>
+                            <th scope="col">CLAVE</th>
+                            <th scope="col">ESTADO</th>
+                     
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+<?php 
+                while ($fila = mysqli_fetch_array($result)){
+                    ?>
+                        <tr>
+                            <th><?php echo $fila['id']; ?></th>
+                            <td><?php echo $fila['nombres']." ".$fila['apellidos']; ?></td>
+                            <td><?php echo $fila['usuario']; ?></td>
+                            <td><?php echo $fila['password']; ?></td>
+                            <td><?php echo $fila['estado']; ?></td>
+           
+
+                            <td>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button class="btn btn-warning me-md-2" id="btnEditarUsuario"
+                                        name="btnEditarUsuario" type="button" onclick="obtenerUsuario(<?php echo $fila['id']; ?>);">Editar</button>
+                                </div>
+                            </td>
+                          
+                    <?php 
+                    }
+                    ?>
+                     </div>

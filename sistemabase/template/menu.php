@@ -34,7 +34,8 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <li><a class="dropdown-item " href="#" onclick="cargarContenido('view/Usuarios/agregarMedicina.php');">AGREGAR MEDICINA</a></li>       
-                        <li><a class="dropdown-item " href="#" onclick="cargarContenido('view/Usuarios/agregarMedicina.php');">VER INVENTARIO</a></li>                                               
+                        <li><a class="dropdown-item " href="#" onclick="cargarContenido('view/Usuarios/verInventario.php');">VER INVENTARIO</a></li>  
+                        <li><a class="dropdown-item " href="#" onclick="cargarContenido('view/Usuarios/ventas.php');">VENTAS</a></li>                                         
                     </ul>
                     
                 </li>

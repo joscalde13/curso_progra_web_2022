@@ -55,8 +55,6 @@ class usuariosModel {
                     usuario,
                     password,                    
                     estado,
-                    correo,
-                    numero,
                     user_created_id,
                     fecha_created)
                     VALUES
@@ -64,9 +62,7 @@ class usuariosModel {
                     '$nombres',
                     '$apellidos',                     
                     '$usuario',
-                    '$password', 
-                     $correo',   
-                     $numero',                                              
+                    '$password',                                                        
                     'A',
                     $user_id,
                     now())";        
